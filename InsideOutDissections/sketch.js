@@ -7,7 +7,7 @@ STATES = {
 
 var canvasW = window.screen.width*.99;
 var canvasH = window.screen.height*.8;
-var side_l = 100;
+var side_l = 10;
 var draw = false;
 
 var g_n = -1;
@@ -53,7 +53,7 @@ var scene = function(sketch){
 				case 1:
 			   
 			    let sub_poly = new divided_poly(g_n, g_ks, side_l);
-			    sub_poly.draw(sketch, canvasW/4, canvasH/4);
+			    sub_poly.draw(sketch, canvasW/8, canvasH/8);
 
 			    	break;
 				case 2:
@@ -68,6 +68,7 @@ new p5(scene);
 
 function start(){
 	let n = parseInt(document.getElementById("n").value);
+	side_l = 1200/n;
 
 	let kString = document.getElementById("ks").value;
 	let ks = [];
