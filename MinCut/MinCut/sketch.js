@@ -1,4 +1,4 @@
-let n = 20;
+let n = 12;
 let p = .33;
 
 function setup(){
@@ -26,18 +26,58 @@ function setup(){
         }
         this.graph.push(row);
     }
-    
-    
-    for(var i = 0; i < n; i++){
-        for(var j = 0; j < i; j++){
-            var edgeOdds = Math.random();
-            if(edgeOdds < p){
-                this.edgeList.push(new edge(this.vertices[i],this.vertices[j]))
-                this.graph[i][j] = 1;
-                this.graph[j][i] = 1;
-            }
-        }  
+
+    if ( 1 == 1 ){
+        this.edgeList.push(new edge(this.vertices[0], this.vertices[1]));
+        this.edgeList.push(new edge(this.vertices[0], this.vertices[4]));
+        this.edgeList.push(new edge(this.vertices[0], this.vertices[5]));
+        this.edgeList.push(new edge(this.vertices[1], this.vertices[2]));
+        this.edgeList.push(new edge(this.vertices[1], this.vertices[6]));
+        this.edgeList.push(new edge(this.vertices[1], this.vertices[5]));
+        this.edgeList.push(new edge(this.vertices[2], this.vertices[3]));
+        this.edgeList.push(new edge(this.vertices[2], this.vertices[7]));
+        this.edgeList.push(new edge(this.vertices[2], this.vertices[6]));
+        this.edgeList.push(new edge(this.vertices[3], this.vertices[7]));  
+
+        this.edgeList.push(new edge(this.vertices[4], this.vertices[5]));
+        this.edgeList.push(new edge(this.vertices[4], this.vertices[8]));
+        this.edgeList.push(new edge(this.vertices[4], this.vertices[9]));
+        this.edgeList.push(new edge(this.vertices[5], this.vertices[6]));
+        this.edgeList.push(new edge(this.vertices[5], this.vertices[9]));   
+        this.edgeList.push(new edge(this.vertices[5], this.vertices[10]));
+        this.edgeList.push(new edge(this.vertices[6], this.vertices[7]));
+        this.edgeList.push(new edge(this.vertices[6], this.vertices[10]));
+        this.edgeList.push(new edge(this.vertices[6], this.vertices[11]));
+        this.edgeList.push(new edge(this.vertices[7], this.vertices[11]));
+
+        this.edgeList.push(new edge(this.vertices[8], this.vertices[9]));
+        this.edgeList.push(new edge(this.vertices[9], this.vertices[10]));
+        this.edgeList.push(new edge(this.vertices[10], this.vertices[11]));
+
+
+//        this.edgeList.push(new edge(this.vertices[8], this.vertices[9]));
+        // this.edgeList.push(new edge(this.vertices[9], this.vertices[10]));
+        // this.edgeList.push(new edge(this.vertices[10], this.vertices[11]));
+        // this.edgeList.push(new edge(this.vertices[8], this.vertices[9]));
+        // this.edgeList.push(new edge(this.vertices[9], this.vertices[10]));
+        // this.edgeList.push(new edge(this.vertices[10], this.vertices[11]));
+        // this.edgeList.push(new edge(this.vertices[8], this.vertices[9]));
+   
     }
+
+    if( 1 == 0){
+        for(var i = 0; i < n; i++){
+            for(var j = 0; j < i; j++){
+                var edgeOdds = Math.random();
+                if(edgeOdds < p){
+                    this.edgeList.push(new edge(this.vertices[i],this.vertices[j]))
+                    this.graph[i][j] = 1;
+                    this.graph[j][i] = 1;
+                }
+            }  
+        }
+    }
+   
     //end generate random graph
     
     console.log("Random Graph:");
@@ -55,17 +95,27 @@ function draw(){
     
     //1. assign corrdinates
     var coords = [];
-    for(let i = 0; i < n; i++){
-        coords.push([(x*Math.random()-x/2) + (windowWidth/2),
-                        (y*Math.random()-y/2) + windowHeight/2]);
-        
-        this.vertices[i].coords = coords[i];
-        
+
+    if( 1 == 1){
+        for(let i = 0; i < n; i++){
+            coords.push([100 + 100*(i%4), 200 + 50 * Math.floor(i/4)]);
+            this.vertices[i].coords = coords[i];
+        }
+    }
+    else{
+        for(let i = 0; i < n; i++){
+            coords.push([(x*Math.random()-x/2) + (windowWidth/2),
+                (y*Math.random()-y/2) + windowHeight/2]);
+                
+                this.vertices[i].coords = coords[i];
+                
+            }
     }
     
     //2. draw verts
     this.vertices.forEach((vert) => {
-        circle(vert.coords[0], vert.coords[1], 10); 
+        circle(vert.coords[0], vert.coords[1], 10);
+        text(vert.name, vert.coords[0]+10, vert.coords[1] - 10); 
     })    
 
     //3. draw edges
@@ -97,9 +147,66 @@ function draw(){
     print(res);
     print("Min cut is: " + res["edges"].length + "!")
 
+
+    print("------------");
+    let max = -1;
+    let total = 0;
+    let trials = n;
+    for(let i = 0; i < trials; i++){
+        res = randomIndependentSet(this.vertices, this.edgeList);
+        total += res.length;
+        max = Math.max(res.length, max);
+    }
+    print(total/trials);
+    print("max: ", max);
+    // print(res);
     //draw cut edges
 
     // print(res);
+}
+
+function randomIndependentSet(verts,edgeList){
+
+    //1. delete vertices
+        
+    //find average degree
+    let tot_degree = 2 * edgeList.length;
+    let d = tot_degree/verts.length;
+    // print("d",d)
+    // print(verts);
+    // print(edgeList);
+    //delete verts
+    let p        = 1 - (1 / d)
+    let newVerts = []; 
+
+    for(let i = 0; i < verts.length; i++){
+        if(Math.random() > p){
+            newVerts.push(verts[i]); //with probability 1 - p add to new vertex list
+        }
+    }
+
+    // print("--- New Verts -----");
+    // newVerts.forEach( (vert) => {print(vert);})
+
+
+    //2. delete edges
+    let newEdges = [];
+    for (let i = 0; i < edgeList.length; i++){
+        if(newVerts.indexOf(edgeList[i].v1) > -1 && newVerts.indexOf(edgeList[i].v2) > -1){
+            // print(edgeList[i]);
+            if( Math.random() > .5){
+                newVerts.splice(newVerts.indexOf(edgeList[i].v1), 1);
+                // print(edgeList[i].v1);
+            }
+            else{
+                newVerts.splice(newVerts.indexOf(edgeList[i].v2), 1);               
+                // print(edgeList[i].v2);
+            }
+        }
+    }
+    
+    //3. return vertices
+    return newVerts;
 }
 
 function RandFindMinCut(verts, edgeList){

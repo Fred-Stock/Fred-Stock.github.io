@@ -73,7 +73,7 @@ function start(){
 	let kString = document.getElementById("ks").value;
 	let ks = [];
 	if (kString == ""){
-		let k   = Math.floor((n - 2)/4 + 1);
+		let k   = Math.floor((n - 4)/2 + 1);
 		let rem = n;
 		for(; k <= rem; rem -= k){
 			ks.push(k);
