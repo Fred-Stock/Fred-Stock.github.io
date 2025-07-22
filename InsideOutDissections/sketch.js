@@ -70,7 +70,8 @@ function start(){
 	let n = parseInt(document.getElementById("n").value);
 	side_l = 1200/n;
 
-	let kString = document.getElementById("ks").value;
+	// let kString = document.getElementById("ks").value;
+	let kString = "";
 	let ks = [];
 	if (kString == ""){
 		let k   = Math.floor((n - 4)/2 + 1);
