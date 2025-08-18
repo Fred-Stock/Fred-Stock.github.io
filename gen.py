@@ -19,8 +19,8 @@ def update_pubdata():
     """Init submodule, switch to master, pull latest."""
     print("→ Updating pubdata submodule…")
     run("git submodule update --init --recursive")
-    run("git fetch origin master", cwd="pubdata")
-    run("git checkout master",   cwd="pubdata")
+    run("git fetch origin main", cwd="pubdata")
+    run("git checkout main",   cwd="pubdata")
     run("git pull",              cwd="pubdata")
 
 def build_site(out_dir):
