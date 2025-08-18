@@ -27,7 +27,7 @@ def build_site(out_dir):
     """Run generator.py in pubdata and copy artifacts + root CNAME to out_dir."""
     update_pubdata()
     print("→ Generating site…")
-    run("python3 generator.py", cwd="pubdata")
+    run("python generator.py", cwd="pubdata")
 
     os.makedirs(out_dir, exist_ok=True)
     # copy generated index.html
