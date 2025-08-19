@@ -1,5 +1,3 @@
-Code was provided by Jack Spalding (https://github.com/jacketsj)
-
 # Instructions for setup/edits
 1. Clone this repo.
 2. Run `git submodule update --init' to get the `pubdata` repo as a submodule.
