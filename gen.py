@@ -51,16 +51,13 @@ def build_site(out_dir):
         )
 
 def deploy_site(build_dir):
-    """
-    Clone gh-pages into a fresh temp folder, reset it to origin,
-    wipe everything but .git/.gitignore, then copy in build_dir and push.
-    """
+
     print("→ Cloning gh-pages branch into temp…")
     remote = run("git config --get remote.origin.url")
     gh_dir = os.path.join(build_dir, "main")
     run(f"git clone --branch main --single-branch {remote} {gh_dir}")
 
-    print("→ Resetting to origin/gh-pages to avoid conflicts…")
+    print("→ Resetting to origin/main to avoid conflicts…")
     run("git fetch origin main", cwd=gh_dir)
     run("git reset --hard origin/main", cwd=gh_dir)
 
@@ -72,7 +69,7 @@ def deploy_site(build_dir):
 
     print("→ Copying new site into gh-pages…")
     for item in os.listdir(build_dir):
-        if item == "gh-pages":
+        if item == "main":
             continue
         src = os.path.join(build_dir, item)
         dst = os.path.join(gh_dir, item)
