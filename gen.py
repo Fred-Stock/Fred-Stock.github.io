@@ -64,14 +64,10 @@ def deploy_site(build_dir):
     run("git fetch origin main", cwd=gh_dir)
     run("git reset --hard origin/main", cwd=gh_dir)
 
-    print("→ Cleaning old files…")
+    print("→ Cleaning old index…")
     for item in os.listdir(gh_dir):
-        if item in (".git", ".gitignore"):
-            continue
-        path = os.path.join(gh_dir, item)
-        if os.path.isdir(path):
-            shutil.rmtree(path)
-        else:
+        if item == "index.html":
+            path = os.path.join(gh_dir, item)
             os.remove(path)
 
     print("→ Copying new site into gh-pages…")
