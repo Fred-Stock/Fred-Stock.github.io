@@ -78,8 +78,8 @@ def deploy_site(build_dir):
         else:
             shutil.copy2(src, dst)
 
-    print("→ Committing and pushing gh-pages…")
-    run("git add .", cwd=gh_dir)
+    # print("→ Committing and pushing gh-pages…")
+    # run("git add .", cwd=gh_dir)
     try:
         run('git commit -m "Deploy updated site"', cwd=gh_dir)
     except SystemExit:
