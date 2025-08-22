@@ -57,18 +57,18 @@ def deploy_site(build_dir):
     """
     print("→ Cloning gh-pages branch into temp…")
     remote = run("git config --get remote.origin.url")
-    dir = os.path.join(build_dir, "main")
-    run(f"git clone --branch main --single-branch {remote} {dir}")
+    gh_dir = os.path.join(build_dir, "main")
+    run(f"git clone --branch main --single-branch {remote} {gh_dir}")
 
     print("→ Resetting to origin/gh-pages to avoid conflicts…")
-    run("git fetch origin main", cwd=dir)
-    run("git reset --hard origin/main", cwd=dir)
+    run("git fetch origin main", cwd=gh_dir)
+    run("git reset --hard origin/main", cwd=gh_dir)
 
     print("→ Cleaning old files…")
-    for item in os.listdir(dir):
+    for item in os.listdir(gh_dir):
         if item in (".git", ".gitignore"):
             continue
-        path = os.path.join(dir, item)
+        path = os.path.join(gh_dir, item)
         if os.path.isdir(path):
             shutil.rmtree(path)
         else:
@@ -76,23 +76,22 @@ def deploy_site(build_dir):
 
     print("→ Copying new site into gh-pages…")
     for item in os.listdir(build_dir):
-        print(item)
-        if item == "main":
+        if item == "gh-pages":
             continue
         src = os.path.join(build_dir, item)
-        dst = os.path.join(dir, item)
+        dst = os.path.join(gh_dir, item)
         if os.path.isdir(src):
             shutil.copytree(src, dst)
         else:
             shutil.copy2(src, dst)
 
-    # print("→ Committing and pushing gh-pages…")
-    # run("git add .", cwd=dir)
-    # try:
-    #     run('git commit -m "Deploy updated site"', cwd=dir)
-    # except SystemExit:
-    #     print("   (nothing to commit)")
-    # run("git push origin main", cwd=dir)
+    print("→ Committing and pushing gh-pages…")
+    run("git add .", cwd=gh_dir)
+    try:
+        run('git commit -m "Deploy updated site"', cwd=gh_dir)
+    except SystemExit:
+        print("   (nothing to commit)")
+    run("git push origin main", cwd=gh_dir)
 
 def main():
     # ensure we're in the repo root
