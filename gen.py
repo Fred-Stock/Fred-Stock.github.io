@@ -33,7 +33,7 @@ def build_site(out_dir):
     # copy generated index.html
     shutil.copy(os.path.join("pubdata", "index.html"), out_dir)
     # copy CNAME from repo root (not pubdata)
-    shutil.copy("CNAME", out_dir)
+    # shutil.copy("CNAME", out_dir)
 
     # copy all .png from pubdata
     for fname in os.listdir("pubdata"):
