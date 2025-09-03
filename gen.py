@@ -27,7 +27,7 @@ def build_site(out_dir):
     """Run generator.py in pubdata and copy artifacts + root CNAME to out_dir."""
     update_pubdata()
     print("→ Generating site…")
-    run("python generator.py", cwd="pubdata")
+    run("python3 generator.py", cwd="pubdata")
 
     os.makedirs(out_dir, exist_ok=True)
     # copy generated index.html
@@ -78,8 +78,8 @@ def deploy_site(build_dir):
         else:
             shutil.copy2(src, dst)
 
-    # print("→ Committing and pushing gh-pages…")
-    # run("git add .", cwd=gh_dir)
+    print("→ Committing and pushing gh-pages…")
+    run("git add .", cwd=gh_dir)
     try:
         run('git commit -m "Deploy updated site"', cwd=gh_dir)
     except SystemExit:
@@ -91,8 +91,12 @@ def main():
     base = os.path.dirname(os.path.realpath(__file__))
     os.chdir(base)
 
+
+
     with tempfile.TemporaryDirectory() as tmp:
+        print("currentdir", base)
         build_dir = os.path.join(tmp, "build")
+        print("builddir", build_dir)
         build_site(build_dir)
         deploy_site(build_dir)
     print("✅ Deployment complete!")
