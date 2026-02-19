@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Vocab Master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .perspective { perspective: 1000px; }
+        .card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .card-inner.flipped { transform: rotateY(180deg); }
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+        .card-back { transform: rotateY(180deg); }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="max-w-md w-full">
+        <div class="bg-slate-800 rounded-t-xl overflow-hidden shadow-xl border-b-4 border-blue-500">
+            <img id="vocab-image" src="https://loremflickr.com/400/300/germany" alt="Study Image" class="w-full h-64 object-cover">
+        </div>
+
+        <div class="perspective h-64 w-full mb-8">
+            <div id="card" class="card-inner relative w-full h-full shadow-2xl">
+                <div class="card-front bg-white text-slate-900 rounded-b-xl flex items-center justify-center p-6 text-center">
+                    <h1 id="word-display" class="text-4xl font-bold">Laden...</h1>
+                </div>
+                <div class="card-back bg-blue-600 text-white rounded-b-xl flex flex-col items-center justify-center p-6 text-center">
+                    <h2 id="trans-display" class="text-3xl font-bold mb-4">Translation</h2>
+                    <p id="sentence-display" class="text-lg italic opacity-90"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-4">
+            <button onclick="flipCard()" class="flex-1 bg-slate-700 hover:bg-slate-600 py-4 rounded-xl font-bold transition">Flip Card</button>
+            <button onclick="nextWord()" class="flex-1 bg-green-600 hover:bg-green-500 py-4 rounded-xl font-bold transition">Next Word</button>
+        </div>
+    </div>
+
+    <script>
+        // REPLACE THIS with your "Publish to Web" CSV URL from Google Sheets
+        const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTkJhpUT6PQZSxkV9Iv221b0Sn2adOojXxpT0LDibRdxqMdoSIgpWvhV0rv50j_Pjd53vixODPuGuCu/pub?output=csv';
+        
+        let vocabData = [];
+        let currentIndex = -1;
+
+        async function loadVocab() {
+            try {
+                const response = await fetch(CSV_URL);
+                const data = await response.text();
+                const rows = data.split('\n').slice(1); 
+                vocabData = rows.map(row => {
+                    const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                    return {
+                        word: columns[0]?.replace(/"/g, ''),
+                        trans: columns[1]?.replace(/"/g, ''),
+                        sentence: columns[2]?.replace(/"/g, '')
+                    };
+                }).filter(item => item.word);
+                
+                // Initial load
+                updateCardContent();
+            } catch (e) {
+                document.getElementById('word-display').innerText = "Fehler beim Laden";
+            }
+        }
+
+        function nextWord() {
+            if (vocabData.length === 0) return;
+
+            const card = document.getElementById('card');
+            
+            // Check if the card is currently showing the back (translation)
+            if (card.classList.contains('flipped')) {
+                // 1. Start flipping it back to the front
+                card.classList.remove('flipped');
+                
+                // 2. Wait 300ms (half of the 0.6s transition) before swapping text
+                // This ensures the card is 'face down' or mid-turn so you don't see the swap
+                setTimeout(() => {
+                    updateCardContent();
+                }, 300);
+            } else {
+                // If it's already on the front, just swap immediately
+                updateCardContent();
+            }
+        }
+
+        function updateCardContent() {
+            currentIndex = Math.floor(Math.random() * vocabData.length);
+            const item = vocabData[currentIndex];
+
+            // Update Text
+            document.getElementById('word-display').innerText = item.word;
+            document.getElementById('trans-display').innerText = item.trans;
+            document.getElementById('sentence-display').innerText = item.sentence;
+
+            // Update Image
+            const img = document.getElementById('vocab-image');
+            // Using the first word before any slashes for better image matching
+            const searchTag = item.word.split('/')[0].split(' ')[0];
+            img.src = `https://loremflickr.com/400/300/${searchTag}?random=${Math.random()}`;
+        }
+
+        function flipCard() {
+            document.getElementById('card').classList.toggle('flipped');
+        }
+
+        loadVocab();
+    </script>
+</body>
+</html>
