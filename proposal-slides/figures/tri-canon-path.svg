@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="113.9361"
+   height="88.672089"
+   viewBox="0 0 113.9361 88.67209"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1"><marker
+       style="overflow:visible"
+       id="marker138"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid"><path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path138" /></marker><marker
+       style="overflow:visible"
+       id="Dot"
+       refX="0"
+       refY="0"
+       orient="auto"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid"><path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path135" /></marker><linearGradient
+       id="swatch337"><stop
+         style="stop-color:#000000;stop-opacity:0.6;"
+         offset="0"
+         id="stop337" /></linearGradient></defs><g
+     id="g1344"
+     transform="translate(520.96349,17.290878)"><path
+       style="fill:none;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:0.85098;marker-start:url(#Dot);marker-mid:url(#marker138);marker-end:url(#Dot)"
+       d="m -470.75163,-14.790894 c 13.6525,-8.6e-4 15.90306,16.5507097 0.19168,16.5507097 -33.84215,0 -34.67122,16.2945603 -19.15673,16.2985003 9.65176,0.002 27.91047,0.24925 38.65457,0.25286 10.74409,0.004 14.72577,16.68413 0.89933,16.55071 -13.82644,-0.13342 -27.32066,-0.91774 -49.03302,-0.38919 -26.6386,0.64846 -26.41876,16.42279 -9.47998,16.42673 14.69026,0.003 58.08994,1.15108 77.39091,0.72722 35.46904,-0.77891 24.574,16.67999 9.92482,16.67638 -14.64919,-0.004 -96.79916,-0.98475 -96.79916,-0.98475"
+       id="path139" /></g></svg>

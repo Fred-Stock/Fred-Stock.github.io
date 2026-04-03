@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="126.70866mm"
+   height="86.756203mm"
+   viewBox="0 0 126.70866 86.756203"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="7.4000001"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-2-5-6"
+       refX="7.4000001"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-8-4-4" />
+    </marker>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-24.330694,-507.48013)">
+    <path
+       style="fill:#cccccc;stroke:#0000ff;stroke-width:0.575;marker-end:url(#Triangle-2-5-6)"
+       d="m 26.830706,527.17899 29.63333,64.55834"
+       id="path12-8-4-9" />
+    <path
+       style="fill:#cccccc;stroke:#ff0000;stroke-width:0.575;marker-start:url(#Triangle-2-5-6)"
+       d="M 56.464036,591.73733 95.09311,583.00607"
+       id="path13-4-4-2" />
+    <path
+       style="fill:#cccccc;stroke:#0000ff;stroke-width:0.575;marker-start:url(#Triangle-2-5-6)"
+       d="m 55.756069,551.75759 0.707967,39.97974"
+       id="path14-3-2" />
+    <path
+       style="fill:#cccccc;stroke:#ff0000;stroke-width:0.575;marker-end:url(#Triangle)"
+       d="m 55.756069,551.75759 40.659952,-11.8786"
+       id="path15-0-4" />
+    <path
+       style="fill:#cccccc;stroke:#ff0000;stroke-width:0.575;marker-end:url(#Triangle)"
+       d="m 95.09311,583.00607 1.322911,-43.12708"
+       id="path16-7-7" />
+    <path
+       style="fill:#cccccc;stroke:#ff0000;stroke-width:0.575;marker-end:url(#Triangle-2-5-6)"
+       d="M 148.53891,544.37691 96.416021,539.87899"
+       id="path17-8-7" />
+    <path
+       style="fill:#cccccc;stroke:#0000ff;stroke-width:0.575;marker-end:url(#Triangle-2-5-6)"
+       d="m 148.53891,544.37691 -53.4458,38.62916"
+       id="path18-6-5" />
+    <path
+       style="fill:#cccccc;stroke:#0000ff;stroke-width:0.575;marker-end:url(#Triangle-2-5-6)"
+       d="m 72.074452,509.98108 76.464458,34.39583"
+       id="path19-8-4" />
+    <path
+       style="fill:#cccccc;stroke:#0000ff;stroke-width:0.575;marker-start:url(#Triangle-2-5-6)"
+       d="M 26.830706,527.17899 72.074452,509.98108"
+       id="path20-8-8" />
+    <path
+       style="fill:#cccccc;stroke:#ff0000;stroke-width:0.575;marker-end:url(#Triangle-2-5-6)"
+       d="m 55.756069,551.75759 6.719454,-23.19455"
+       id="path21-4-1" />
+    <path
+       style="fill:#cccccc;stroke:#ff0000;stroke-width:0.575;marker-end:url(#Triangle-2-5-6)"
+       d="m 26.830706,527.17899 35.644817,1.38405"
+       id="path22-3-2" />
+    <path
+       style="fill:#cccccc;stroke:#0000ff;stroke-width:0.575;marker-start:url(#Triangle-2-5-6)"
+       d="m 72.074452,509.98108 -9.598929,18.58196"
+       id="path23-1-8" />
+    <circle
+       style="fill:#cccccc;stroke:none;stroke-width:0.42185"
+       id="circle23-4-9"
+       cx="55.756065"
+       cy="551.75659"
+       r="2.5" />
+    <circle
+       style="fill:#cccccc;stroke:none;stroke-width:0.42185"
+       id="path1-5-5-9-3"
+       cx="96.416153"
+       cy="539.87799"
+       r="2.5" />
+    <circle
+       style="fill:#cccccc;stroke:none;stroke-width:0.42185"
+       id="path1-2-0-2-6"
+       cx="95.093231"
+       cy="583.00507"
+       r="2.5" />
+    <circle
+       style="fill:#cccccc;stroke:none;stroke-width:0.42185"
+       id="path1-7-3-0-8"
+       cx="56.464035"
+       cy="591.73633"
+       r="2.5" />
+    <circle
+       style="fill:#cccccc;stroke:none;stroke-width:0.42185"
+       id="path1-6-6-6-0"
+       cx="26.830696"
+       cy="527.17804"
+       r="2.5" />
+    <circle
+       style="fill:#cccccc;stroke:none;stroke-width:0.42185"
+       id="path1-6-5-1-8-2"
+       cx="62.475517"
+       cy="528.56207"
+       r="2.5" />
+    <circle
+       style="fill:#cccccc;stroke:none;stroke-width:0.42185"
+       id="path1-61-0-9-1"
+       cx="72.074448"
+       cy="509.9801"
+       r="2.5" />
+    <circle
+       style="fill:#cccccc;stroke:none;stroke-width:0.42185"
+       id="path1-20-6-2-0"
+       cx="148.53937"
+       cy="544.37592"
+       r="2.5" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:0.575;stroke-linecap:round;stroke-linejoin:round"
+       id="rect24-6-5"
+       width="10.699453"
+       height="53.497272"
+       x="104.11142"
+       y="532.35516"
+       transform="rotate(1.4084504)" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#cccccc;stroke-width:0.722103;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="rect26"
+       width="50.93615"
+       height="12.315774"
+       x="-92.806557"
+       y="540.44012"
+       transform="rotate(-15.052751)" />
+  </g>
+</svg>

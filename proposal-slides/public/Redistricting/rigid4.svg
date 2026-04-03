@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 400 400"
+   preserveAspectRatio="xMinYMin meet"
+   id="svg32"
+   sodipodi:docname="rigid4.svg"
+   inkscape:version="1.4 (1:1.4+202410161351+e7c3feb100)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview32"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.5202796"
+     inkscape:cx="222.65641"
+     inkscape:cy="205.88318"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg32" />
+  <defs
+     id="SvgjsDefs1071">
+    <g
+       id="SvgjsG1072">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="white"
+         stroke="gray"
+         id="rect1" />
+    </g>
+    <g
+       id="SvgjsG1073">
+      <g
+         id="g2">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="white"
+           stroke="gray"
+           id="rect2" />
+        <circle
+           cx="25"
+           cy="25"
+           r="15"
+           fill="red"
+           id="circle2" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1074">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#bbbbbb"
+         stroke="black"
+         id="rect3" />
+    </g>
+    <g
+       id="SvgjsG1075">
+      <g
+         id="g4">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#bbbbbb"
+           stroke="black"
+           id="rect4" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle4" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1076">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#989898"
+         stroke="black"
+         id="rect5" />
+    </g>
+    <g
+       id="SvgjsG1077">
+      <g
+         id="g6">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#989898"
+           stroke="black"
+           id="rect6" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle6" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1078">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#666666"
+         stroke="black"
+         id="rect7" />
+    </g>
+    <g
+       id="SvgjsG1079">
+      <g
+         id="g8">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#666666"
+           stroke="black"
+           id="rect8" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle8" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1080">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="black"
+         stroke="black"
+         id="rect9" />
+    </g>
+    <g
+       id="SvgjsG1081">
+      <g
+         id="g10">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="black"
+           stroke="black"
+           id="rect10" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle10" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1082">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#333399"
+         stroke="black"
+         id="rect11" />
+    </g>
+    <g
+       id="SvgjsG1083">
+      <g
+         id="g12">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#333399"
+           stroke="black"
+           id="rect12" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle12" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1084">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#3366ff"
+         stroke="black"
+         id="rect13" />
+    </g>
+    <g
+       id="SvgjsG1085">
+      <g
+         id="g14">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#3366ff"
+           stroke="black"
+           id="rect14" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle14" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1086">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#00c7c7"
+         stroke="black"
+         id="rect15" />
+    </g>
+    <g
+       id="SvgjsG1087">
+      <g
+         id="g16">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#00c7c7"
+           stroke="black"
+           id="rect16" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle16" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1088">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#008000"
+         stroke="black"
+         id="rect17" />
+    </g>
+    <g
+       id="SvgjsG1089">
+      <g
+         id="g18">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#008000"
+           stroke="black"
+           id="rect18" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle18" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1090">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#00c000"
+         stroke="black"
+         id="rect19" />
+    </g>
+    <g
+       id="SvgjsG1091">
+      <g
+         id="g20">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#00c000"
+           stroke="black"
+           id="rect20" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle20" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1092">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#800080"
+         stroke="black"
+         id="rect21" />
+    </g>
+    <g
+       id="SvgjsG1093">
+      <g
+         id="g22">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#800080"
+           stroke="black"
+           id="rect22" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle22" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1094">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#d000d0"
+         stroke="black"
+         id="rect23" />
+    </g>
+    <g
+       id="SvgjsG1095">
+      <g
+         id="g24">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#d000d0"
+           stroke="black"
+           id="rect24" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle24" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1096">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#a00000"
+         stroke="black"
+         id="rect25" />
+    </g>
+    <g
+       id="SvgjsG1097">
+      <g
+         id="g26">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#a00000"
+           stroke="black"
+           id="rect26" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle26" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1098">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#ff0000"
+         stroke="black"
+         id="rect27" />
+    </g>
+    <g
+       id="SvgjsG1099">
+      <g
+         id="g28">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#ff0000"
+           stroke="black"
+           id="rect28" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#a00000"
+           id="circle28" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1100">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#ed8e00"
+         stroke="black"
+         id="rect29" />
+    </g>
+    <g
+       id="SvgjsG1101">
+      <g
+         id="g30">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#ed8e00"
+           stroke="black"
+           id="rect30" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle30" />
+      </g>
+    </g>
+    <g
+       id="SvgjsG1102">
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         fill="#eced00"
+         stroke="black"
+         id="rect31" />
+    </g>
+    <g
+       id="SvgjsG1103">
+      <g
+         id="g32">
+        <rect
+           x="0"
+           y="0"
+           width="50"
+           height="50"
+           fill="#eced00"
+           stroke="black"
+           id="rect32" />
+        <circle
+           cx="25"
+           cy="25"
+           r="14"
+           fill="#ff0000"
+           id="circle32" />
+      </g>
+    </g>
+  </defs>
+  <g
+     id="SvgjsG1879"
+     transform="translate(50,50)">
+    <use
+       id="SvgjsUse3012"
+       xlink:href="#SvgjsG1074" />
+  </g>
+  <g
+     id="SvgjsG1880"
+     transform="translate(50,100)">
+    <use
+       id="SvgjsUse3032"
+       xlink:href="#SvgjsG1074" />
+  </g>
+  <g
+     id="SvgjsG1881"
+     transform="translate(50,150)">
+    <use
+       id="SvgjsUse2037"
+       xlink:href="#SvgjsG1094" />
+  </g>
+  <g
+     id="SvgjsG1882"
+     transform="translate(50,200)">
+    <use
+       id="SvgjsUse2038"
+       xlink:href="#SvgjsG1094" />
+  </g>
+  <g
+     id="SvgjsG1883"
+     transform="translate(50,250)">
+    <use
+       id="SvgjsUse3086"
+       xlink:href="#SvgjsG1075" />
+  </g>
+  <g
+     id="SvgjsG1884"
+     transform="translate(50,300)">
+    <use
+       id="SvgjsUse3100"
+       xlink:href="#SvgjsG1075" />
+  </g>
+  <g
+     id="SvgjsG1887"
+     transform="translate(100,50)">
+    <use
+       id="SvgjsUse2998"
+       xlink:href="#SvgjsG1074" />
+  </g>
+  <g
+     id="SvgjsG1888"
+     transform="translate(100,100)">
+    <use
+       id="SvgjsUse2928"
+       xlink:href="#SvgjsG1084" />
+  </g>
+  <g
+     id="SvgjsG1889"
+     transform="translate(100,150)">
+    <use
+       id="SvgjsUse2045"
+       xlink:href="#SvgjsG1094" />
+  </g>
+  <g
+     id="SvgjsG1890"
+     transform="translate(100,200)">
+    <use
+       id="SvgjsUse2046"
+       xlink:href="#SvgjsG1082" />
+  </g>
+  <g
+     id="SvgjsG1891"
+     transform="translate(100,250)">
+    <use
+       id="SvgjsUse2047"
+       xlink:href="#SvgjsG1082" />
+  </g>
+  <g
+     id="SvgjsG1892"
+     transform="translate(100,300)">
+    <use
+       id="SvgjsUse3128"
+       xlink:href="#SvgjsG1075" />
+  </g>
+  <g
+     id="SvgjsG1895"
+     transform="translate(150,50)">
+    <use
+       id="SvgjsUse3036"
+       xlink:href="#SvgjsG1098" />
+  </g>
+  <g
+     id="SvgjsG1896"
+     transform="translate(150,100)">
+    <use
+       id="SvgjsUse2966"
+       xlink:href="#SvgjsG1084" />
+  </g>
+  <g
+     id="SvgjsG1897"
+     transform="translate(150,150)">
+    <use
+       id="SvgjsUse2984"
+       xlink:href="#SvgjsG1084" />
+  </g>
+  <g
+     id="SvgjsG1898"
+     transform="translate(150,200)">
+    <use
+       id="SvgjsUse2054"
+       xlink:href="#SvgjsG1082" />
+  </g>
+  <g
+     id="SvgjsG1899"
+     transform="translate(150,250)">
+    <use
+       id="SvgjsUse3154"
+       xlink:href="#SvgjsG1075" />
+  </g>
+  <g
+     id="SvgjsG1900"
+     transform="translate(150,300)">
+    <use
+       id="SvgjsUse3150"
+       xlink:href="#SvgjsG1075" />
+  </g>
+  <g
+     id="SvgjsG1903"
+     transform="translate(200,50)">
+    <use
+       id="SvgjsUse3056"
+       xlink:href="#SvgjsG1098" />
+  </g>
+  <g
+     id="SvgjsG1904"
+     transform="translate(200,100)">
+    <use
+       id="SvgjsUse3068"
+       xlink:href="#SvgjsG1098" />
+  </g>
+  <g
+     id="SvgjsG1905"
+     transform="translate(200,150)">
+    <use
+       id="SvgjsUse2061"
+       xlink:href="#SvgjsG1072" />
+  </g>
+  <g
+     id="SvgjsG1906"
+     transform="translate(200,200)">
+    <use
+       id="SvgjsUse2062"
+       xlink:href="#SvgjsG1080" />
+  </g>
+  <g
+     id="SvgjsG1907"
+     transform="translate(200,250)">
+    <use
+       id="SvgjsUse2063"
+       xlink:href="#SvgjsG1080" />
+  </g>
+  <g
+     id="SvgjsG1908"
+     transform="translate(200,300)">
+    <use
+       id="SvgjsUse3152"
+       xlink:href="#SvgjsG1075" />
+  </g>
+  <g
+     id="SvgjsG1911"
+     transform="translate(250,50)">
+    <use
+       id="SvgjsUse2067"
+       xlink:href="#SvgjsG1102" />
+  </g>
+  <g
+     id="SvgjsG1912"
+     transform="translate(250,100)">
+    <use
+       id="SvgjsUse2068"
+       xlink:href="#SvgjsG1072" />
+  </g>
+  <g
+     id="SvgjsG1913"
+     transform="translate(250,150)">
+    <use
+       id="SvgjsUse2069"
+       xlink:href="#SvgjsG1072" />
+  </g>
+  <g
+     id="SvgjsG1914"
+     transform="translate(250,200)">
+    <use
+       id="SvgjsUse2070"
+       xlink:href="#SvgjsG1096" />
+  </g>
+  <g
+     id="SvgjsG1915"
+     transform="translate(250,250)">
+    <use
+       id="SvgjsUse2071"
+       xlink:href="#SvgjsG1080" />
+  </g>
+  <g
+     id="SvgjsG1916"
+     transform="translate(250,300)">
+    <use
+       id="SvgjsUse2072"
+       xlink:href="#SvgjsG1092" />
+  </g>
+  <g
+     id="SvgjsG1919"
+     transform="translate(300,50)">
+    <use
+       id="SvgjsUse2075"
+       xlink:href="#SvgjsG1102" />
+  </g>
+  <g
+     id="SvgjsG1920"
+     transform="translate(300,100)">
+    <use
+       id="SvgjsUse2076"
+       xlink:href="#SvgjsG1102" />
+  </g>
+  <g
+     id="SvgjsG1921"
+     transform="translate(300,150)">
+    <use
+       id="SvgjsUse2077"
+       xlink:href="#SvgjsG1096" />
+  </g>
+  <g
+     id="SvgjsG1922"
+     transform="translate(300,200)">
+    <use
+       id="SvgjsUse2078"
+       xlink:href="#SvgjsG1096" />
+  </g>
+  <g
+     id="SvgjsG1923"
+     transform="translate(300,250)">
+    <use
+       id="SvgjsUse2079"
+       xlink:href="#SvgjsG1092" />
+  </g>
+  <g
+     id="SvgjsG1924"
+     transform="translate(300,300)">
+    <use
+       id="SvgjsUse2080"
+       xlink:href="#SvgjsG1092" />
+  </g>
+</svg>

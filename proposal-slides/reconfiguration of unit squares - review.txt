@@ -1,0 +1,79 @@
+Reconfiguration of Unit Squares and Disks: PSPACE-hardness in simple settings
+
+
+This paper shows that it is PSPACE hard to reconfigure unit squares in simple polygons and unit disks in polygons with holes. In doing they also show that reconfiguration of planar monontone 3-SAT is pspace complete, which is a problem of independent interest. They use the previous result of Abrahamsen and Stade that packing unit squares is NP-hard to inspire their reduction for this paper, although non-trivial modifications were required to adapt it. This paper presents great results that are particularly interesting for the field of geometric reconfiguration, both in terms of novel progress and the utility provided by the new results on SAT reconfiguration. This paper is well written though I below I detail changes that I think would improve its readability. 
+
+Here are some of my more general changes:
+
+1) On line 67 you define what a workspace is but then never use the term afterwards, and just say polygon
+2) Figure 4(c), its a little hard to follow since the squares and circles are small and similar looking. Maybe you could keep the black highlighting of the squares?
+3) Footnote 2 is split across two pages (8 and 9)
+4) Figure 9 and later figures. The coloring of the reference centers is a good idea, but maybe you could also add some sort of symbol to the reference center to indicate which directions the corresponding square can move, as the colors are not intuitive indicators of this.
+5) Is there another term than homid or vemid? This is kind of an odd term and I don't personally think these are used enough to require this short hand. Maybe something line x-aligned and y-aligned instead?
+6) Figures 14 and 15, could you label which state is plus or minus with a subcaption or other method? Even just saying explicitly that the right is minus and plus is left in the caption.
+7) If latex allows, is it possible to make figure 19 appear on a page with text as opposed to by itself?
+
+Some smaller grammatical or phrasing changes follow:
+L20: "we study two well-known reconfiguration problems" --> I would maybe remove this sentence or move it later, so it is more clear what the two problems are. I think this abstract could start just as well with the second sentence"
+L26: "... so that any object" --> "so any object..."  
+L63: "In case of squares, the objects have to stay axis-aligned during the reconfiguration" --> In the last sentence you specified these as axis-aligned squares, I think this could be cut
+L65: "Obstacles are modeled by defining the workspace in which the objects are allowed to lie" --> Currently workspace isn't defined, and its not entirely clear what you mean by modeling obstacles by defining the workspace
+L83-86: "Abrahamsen and Stade recently overcame this obstacle by making a novel reduction from PLANAR-3-SAT in order to obtain NP-hardness of the well-known problem of packing unit square in a simple polygon; a problem that had been known to be NP-hard for polygons with holes since 1983" --> This is a little long maybe something like "Abrahamsen and Stade recently overcame this obstacle with a novel reduction from PLANAR-3-SAT showing packing units squares in a simple polygon is NP-hard. This closed a 40 year open problem."
+L99: "by an hypergraph..." --> "by a hypergraph"
+L104: "We show the following result for two reconfiguration variants of PLANAR-3-SAT" --> I would move this sentence to the end of the paragraph or maybe change the wording slightly. The narrative flow feels a little interrupted, as this sentence says "the following result" but then has a few more sentences before presenting the result.
+L114: "satisfyability" --> "satisfiability"
+L115-117: "Interestingly, for many variants of SAT, the satisfiability... or vice versa" --> This sentence feels a little hollow, basically saying that some SAT variants have some complexity, but others have a different complexity. Maybe you could reword it so this more clear; most variants are NP-c for satisfiability and PSPACE-c for reconfiguration, but two specific variants break the trend.
+L185: "instances, in Section 2.2." --> instances (Section 2.2)."
+L192: "... (equipped with a crossing-free embedding of the clause variable incidence graph in the plane) ..." --> I think this could be removed, or maybe shortened, its a little wordy and breaks up the flow
+L196: "This variable appears as x_e..." --> 'Appears as' is a little unclear, are you referencing what is going on in figure 3?
+L199: "...replaced by a single clause for its three incident edges." --> "... replaced by a single clause." (the current phrasing makes it sound like you are putting in three clauses, one for each edge)
+L200: "... by two clauses, each for one of.." --> "... by two clauses, one for each of..."
+L212-214: "(true variables... reversed edges)" this is a long parenthesis, maybe you could make it its own sentence?
+L220: "there additionally exists an..." --> "there exists an..."
+L223: Super small comment, but the references are not in order, eg [30,11]
+L242: "For every clauses (\not x_e+ \lor \not x_e-) (coming from a subdivision point) exactly..." --> "For every clause (\not x_e+ \lor \not x_e-) coming from a subdivision point exactly..."
+L262: "changes one variable value." --> "changes one variable's value."
+L267: "additionally, we have to argue..." --> "we have to argue..."
+L325: "centers Let P be a ..." --> "centers. Let P be a ..." (missing period)
+L343-346: "It turns out... centered in each direction." --> This is a long sentence maybe something like "To describe the reconfigurations of squares in P, we only need to consider the extreme or centered positions of squares with respect to their centers."
+L376: "...to the smallest enclosing orthogonal polygon" --> Its not entirely clear from context what is being enclosed
+L409: "primary (original)" --> Do you need the term primary if it just means original? This gets a little confusing later this definition is subtle, just in these parenthesis, so it is easy to miss.
+L433: "(called pyramid)" --> "(called a pyramid)"
+L434: Figure 13 is referenced before you reference Figure 12, maybe you could reorder them? It makes the reader think they missed something 
+L439: "pyramid structure do not collide with..." --> "pyramid structures do not collide with..."
+L459: "If the top is in the homid position," --> Is there just one homid position? It seemed from the definition this should be something like, "If the top is homid,"
+L472: "squares in the beginning and in the end," --> "squares on the ends" (beginning and end isn't super clear)
+L478: "the specific horizontal positions of the rows do not affect..." --> Its not super clear to me by what you mean by specific horizontal positions 
+Figure 13 Caption: You use "of the" four times in the first sentence, maybe its usage could be reduced
+L486: "each be in the homid or left," --> Either "each be homid or left," or "each be in the homid or left positions,"
+L500: I believe you already defined helper rows in section 2, 
+L503-504: Can you be a little more explicit that you are going to use the labeling from figure 14 in this discussion, its a little jarring as when you mention the gadget is shown in figure 14 its not immediately clear it will be necessary for understanding this sentence.
+L513: "for a concrete example to support the description." --> "for a concrete example."
+L516-518: "(and if the.. another variable component)" --> This is a long parenthesis, maybe this could be made a sentence or shortened
+Figure 19: Maybe you could label which subfigure corresponds to which part of the caption, though this is relatively clear from context
+L537: "in the figure-" --> "in figure 19-"
+L550: "we create a polygon P as described." --> It is not clear if the polygon description will follow or if you are referring to the previous sections
+L591: "x-coordinates constant at integers," --> "x-coordinates constant integers,"
+L600: "not during a jump event, it is because" --> "not during a jump event. This is because"
+L605: "same direction (left or right) or in opposite directions or only one square moves." --> "same direction (left or right), in opposite directions, or when only one square moves."
+L620: "with the claimed properties." --> it might be nice to refresh the reader what the properties were
+L630: "Finally, we prove the containment in PSPACE." --> "Finally, we prove containment in PSPACE."
+L661: [17,16,18] --> unsorted references
+L667: "an arc-gon together with a" --> "an arc-gon with a"
+L669: "of the NCL instance with the property that two configurations..." --> "of the NCL instance. We show two configurations.."
+L670: "each other if and only of the" --> "each other if and only if the"
+L676: "but ensure that" --> "but ensures that"
+L680: "single piece of and edge of" --> "single piece of an edge of"
+L691: "movement of this disk by adding" --> "movement of this door disk by adding"
+L691-696: This is a rather lengthy sentence, maybe it could be broken up a bit or have the wording simplified.
+Figure 27: "On the right two different valid configurations of disks with different extremal positions of the door disks" --> this wording is confusing, maybe the columns could be labeled or you could increase the specificity of "on the right"
+L736: "intermediate configuration" --> "intermediate configurations"
+L740: "complete the proof of complete the proof of" --> remove repeat
+L747-757: I think a short definition of "placement space" would be good
+L772: "which is sufficient" --> I might remove this, it is not clear what sufficient exactly means yet
+L774: "we have to revisit the possible configurations..." --> what does revisit mean?
+L789: "to the packing problem" --> It might be good to refresh that [1] is about packing squares
+L806: "therefore more involved" --> "therefore are more involved"
+
+
+

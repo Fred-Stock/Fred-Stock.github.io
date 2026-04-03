@@ -1,0 +1,65 @@
+/* .slidev-page-31,
+.slidev-layout.my-custom-layout {
+  .slidev-vclick-target {
+    transition: all 500ms ease;
+  }
+
+  .slidev-vclick-hidden {
+    transform: scale(0);
+  }
+} */
+:root {
+  --slidev-code-padding: 8px 10px; 
+  --slidev-background: #16161690 !important; 
+}
+
+h1 {
+  text-transform: initial !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+.slidev-vclick-hidden {
+   transition: 150ms ease;
+  /* transform: scale(0); */
+  height: 0;
+}
+
+
+.darklist {
+  .slidev-vclick-hidden {
+    opacity: .4 !important;
+    color:white;
+    height: 100%;
+    transition: opacity 30ms ease;
+  }
+  
+  .slidev-vclick-target {
+    transition: all 500ms ease;
+  }
+
+}
+
+/* Kinda rough right now,
+  * this is for recombination animations
+  * it would be nice to wrap them in some consistent div or something. */
+.square-div{ 
+  .slidev-vclick-target {
+    transition: all 600ms ease-in-out;
+    transform: scale(1);
+  }
+  
+  .slidev-vclick-hidden {
+    transition: 750ms ease;
+    transform: scale(0);
+    height: 0;
+  }
+}
+
+.triangular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Example */
+    gap: 0;
+    width: 60%;
+    margin: 0 auto;
+}
