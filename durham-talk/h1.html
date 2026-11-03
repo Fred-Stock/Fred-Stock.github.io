@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <style type="text/css">
+    body {font-family: arial,helvetica}
+</style>
+    <title>Reconfiguring by local rules</title>
+  </head>
+  <body>
+<div align="center">
+<h1>Generic distributed universal constant-force reconfiguration of 2D lattice-based modular robotic systems</h1>
+<h2>Ferran Hurtado, Enrique Molina, Suneeta Ramaswami and Vera Sacrist&aacute;n</h2>
+</div>
+<hr size="2" width="100%" noshade>
+       <table border="0" cellpadding="2" cellspacing="2" width="100%">
+          <tbody>
+            <tr>
+                <td style="vertical-align:bottom" align="center">
+                <img src="reconf_sq_1.jpg" alt="initial shape" width="88%">
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                <img src="reconf_sq_2.jpg" alt="reconfiguring forwards" width="80%">
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                <img src="reconf_sq_3.jpg" alt="canonical shape" width="100%">
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                <img src="reconf_sq_4.jpg" alt="reconfiguring backwards" width="93%">
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                <img src="reconf_sq_5.jpg" alt="final shape" width="98%">
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:bottom" align="center">
+                Initial shape
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Reconfiguring forwards
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Canonical shape
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Reconfiguring backwards
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Final shape
+                </td>
+            </tr>
+        </table>
+<hr size="2" width="100%" noshade>
+<br>
+<table style="text-align: left;" border="0" cellpadding="10">
+  <tbody>
+<tr>
+<td bgcolor="#CEE3F6" style="vertical-align: bottom; ">
+We prove universal reconfiguration (i.e., reconfiguration between any two robot configurations of the same number of modules) of 2-dimensional lattice-based modular robotic systems, by means of a distributed algorithms.
+<p>
+To the best of our knowledge, this is the first known reconfiguration algorithms that applies in a general setting to a wide variety of particular modular robotic systems, and holds both for square and hexagonal lattice-based 2-dimensional systems.
+<p>
+All modules apply the same set of local rules (in a manner similar to cellular automata), and move relative to each other. Reconfiguration is carried out while keeping the robot connected at all times.
+<p>
+If executed synchronously, any reconfiguration of a robotic system of <em>n</em> modules is done in <em>O</em>(<em>n</em>) time steps, with <em>O</em>(<em>n</em>) basic moves per module, using <em>O</em>(1) force per module, <em>O</em>(1) size memory and computation per module (except for one module, which needs <em>O</em>(<em>n</em>) size memory to store the information of the goal shape), and <em>O</em>(<em>n</em>) communication per module.
+</td></tr></body></table>
+
+<h3>Acknowledgments</h3>
+The square version of the algorithm has been implementd by &Oacute;scar Rodiguez, on a simulator put up by Reinhard Wallner, under the supervision of Oswin Aichholzer and Thomas Hackl, and extended by himself.
+The hexagonal version of the algorithm has been implemented by Sergio Ord&oacute;&ntilde;ez and &Aacute;ngel Rodr&iacute;guez, on a simulator put up by themselves by modifying the previous one by Reinhad Wallner.
+
+<h3>Algorithm</h3>
+      You can read how and why the reconfiguration algorithm works in the following documents:
+      <ul>
+      <li><b>Extended abstract:</b> F. Hurtado, E. Molina, S. Ramaswami, V. Sacrist&aacute;n.
+        Distributed universal reconfiguration of 2D lattice based modular robots.
+        <em>European Workshop on Computational Geometry</em>, Braunschweig (Germany), March 17-20, 2013.
+        <a href="Reconfig-EuroCG-2013.pdf">PDF</a>
+      <li><b>Details on the square-lattice implementation:</b> O. Rodr&iacute;guez.
+         <em>Simulaci&oacute; de l'actuaci&oacute; distribu&iuml;da de robots modulars</em>.
+         Degree Thesis (supervised by V. Sacrist&aacute;n), Facultat d'Inform&agrave;tica de Barcelona, Universitat Polit&egrave;cnica de Catalunya, 2013.
+         <a href="Memoria-oscar.rodriguez.pestana.pdf">PDF</a> (In Catalan)
+      <li><b>Details on the hexagonal-lattice implementation:</b> S. Ord&oacute;&ntilde;ez.
+         <em>Simulaci&oacute;n de algoritmos distribuidos para sistemas rob&oacute;ticos modulares en ret&iacute;culos hexagonales</em>.
+         Bachelor thesis(supervised by V. Sacrist&aacute;n), Facultat de Matem&agrave;tiques i Estad&iacute;stica, Universitat Polit&egrave;cnica de Catalunya, 2013.
+      <a href="TFG-SergioOrdonez.pdf">PDF</a> (In Spanish)
+      </ul>
+
+<h3>Download the simulations</h3>
+        You can download our simulators for square-lattice robotic systems.
+        They come with all the rules necessary to perform the reconfiguration,
+        and a few pairs of initial and goal shapes.
+        Both the square and the hexagonal simulators only require a JAVA Runtime Environment 1.4 or greater.
+        <br><br>
+<div align="center">
+       <table border="0" cellpadding="6" cellspacing="2" width="90%" noshade>
+          <tbody>
+            <tr>
+            <td align="center" bgcolor="#e3e3e3"><b>SQUARE</b></td>
+            <td align="center" bgcolor="#e3e3e3"><b>HEXAGONAL</b></td>
+            </tr>
+            <tr>
+            <td style="vertical-align:top" bgcolor="#e3e3e3">
+            <b>Download the square simulator:</b>
+                <ol>
+                <li> Download the <a href="AgentSystem2D.zip">zipped file</a> anywhere in your computer.
+                <li> Unzip the file. This will create the required subdirectories.
+                <li> Run the <b>AgentSystem2D.jar</b> file to start the simulator.
+                <li> The <a href="2D_square_AgentSystem_UserGuide.pdf">User Guide</a> contains all the information required to use the simulator.
+                </ol>
+            </td>
+            <td style="vertical-align:top" bgcolor="#e3e3e3">
+            <b>Download the hexagonal simulator:</b>
+                <ol>
+                <li> Download the <a href="AgentSystemHexa.zip">zipped file</a> anywhere in your computer.
+                <li> Unzip the file. This will create the required subdirectories.
+                <li> Run the <b>AgentSystemHexa.jar</b> file to start the simulator.
+                <li> The <a href="Hexagonal_AgentSystem_UserGuide.pdf">User Guide</a> contains all the information required to use the simulator.
+                </ol>
+            </td>
+            </tr>
+            <td style="vertical-align:top" bgcolor="#e3e3e3">
+            <b>Information about the sets of rules:</b>
+            <br>
+            <br>
+                We supply a set of 558 rules, which are distributed in the following way:
+                <ol>
+                <li><b>rules_sq_initial_setting.txt</b> contains the preable, which specifies the use of colors for the visualization.</li>
+                <li><b>rules_sq_common_phase.txt</b> contains 129 rules for self-organizing both the initial and the goal shapes (elect a leader, detect all holes, form the scan tree).</li>
+                <li><b>rules_sq_DFvalues_forwards.txt</b> contains 105 rules for computing the DF-values of the initial shape.</li>
+                <li><b>rules_sq_DFvalues_backwards.txt</b> contains 126 rules for computing the DF-values of the goal shape.</li>
+                <li><b>rules_sq_reconfiguring_forwards.txt</b> contains 109 for reconfiguring from the initial shape into the strip. </li>
+                <li><b>rules_sq_reconfiguring_backwards.txt</b> contains 89 for reconfiguring from the strip into the goal shape. </li>
+                <li><b>rules_sq_all_together.txt</b> contains the colors setting and all 558 rules.</li>
+                </ol>
+                Notice that the rules dealing with computations on the mirror image of the goal shape are an artifact of our simulation: when running this strategy on real robots, the information of the goal shape should be sent to the modules, not necessarily computed by them. In addition, a few rules are devoted to correctly showing the colors in the simulation, and are not really necessary otherwise. Their number is irrelevant, though.
+            </td>
+            <td style="vertical-align:top" bgcolor="#e3e3e3">
+            <b>Information about the sets of rules:</b>
+            <br>
+            <br>
+                We supply a set of 1003 rules, which are distributed in the following way:
+                <ol>
+                <li><b>rules_hex_initial_setting.txt</b> contains the preable, which specifies the use of colors for the visualization.</li>
+                <li><b>rules_hex_common_phase.txt</b> contains 216 rules for self-organizing both the initial and the goal shapes (elect a leader, detect all holes, form the scan tree).</li>
+                <li><b>rules_hex_DFvalues_forwards.txt</b> contains 256 rules for computing the DF-values of the initial shape.</li>
+                <li><b>rules_hex_DFvalues_backwards.txt</b> contains 296 rules for computing the DF-values of the goal shape.</li>
+                <li><b>rules_hex_reconfiguring_forwards.txt</b> contains 166 rules for reconfiguring from the initial shape into the strip. </li>
+                <li><b>rules_hex_reconfiguring_backwards.txt</b> contains 70 rules for reconfiguring from the strip into the goal shape. </li>
+                </ol>
+                Notice that the rules dealing with computations on the mirror image of the goal shape are an artifact of our simulation: when running this strategy on real robots, the information of the goal shape should be sent to the modules, not necessarily computed by them. In addition, a few rules are devoted to correctly showing the colors in the simulation, and are not really necessary otherwise. Their number is irrelevant, though.
+            </td>
+            </tr>
+            <tr>
+            <td style="vertical-align:top" bgcolor="#e3e3e3">
+            <b>Legend:</b>
+            <br>
+            <br>
+            The following document contains the legend for states, counters and message channels used in the rules:
+            <a href="Legend_sq.pdf">Legend_sq.pdf</a>
+            </td>
+            <td style="vertical-align:top" bgcolor="#e3e3e3">
+            <b>Legend:</b>
+            <br>
+            <br>
+            The following document contains the legend for states, counters and message channels used in the rules:
+            <a href="Legend_hex.pdf">Legend_hex.pdf</a>
+            </td>
+            </tr>
+            <tr>
+            <td style="vertical-align:top" bgcolor="#e3e3e3">
+            <b>Information about the supplied configuration examples:</b>
+            <br>
+            <br>
+            We supply a set of examples showing specific important behaviors of our rules:
+                <ol>
+                <li><b>agents_sq_activation.txt</b> Small example showing what an activation conflict is, and how we solve it. The activation conflict can be seen in iterations 15-17.</li>
+                <li><b>agents_sq_collision-deadlock-jump-and-wait.txt</b> Small example simultaneously showing how we solve a potential collision and deadlock in iterations 76-95, during the reconfiguration from the initial shape into the strip. Later on, in iterations 552-end, it can be seen how our rules keep the ordering (and still avoid deadlocks by jumping) when reconfiguring from the strip into the goal shape.</li>
+                <li><b>agents_sq_wait_to_close_hole.txt</b> This small example also shows how deadlocks, collisions and activation conflicts are solved (see iterations 50-87). Iterations 594-end also show that our rules take care of closing the holes at the right time, i.e., only when all modules lie in the appropriate connected component of the boundary of the static structure. In this example, some modules need to exit the hole before it gets closed.</li>
+                <li><b>agents_sq_hole_leader_control.txt</b> This small example shows the opposite case, in which modules need to reach the interior of a hole before it gets closed. This is, in general, trivial, since the hole leader normally is sent to its destination after all modules internal to the hole. This file shows the one specific case in which this does not happen if the leader of the hole has been disconnected following the general rule. In this case the leader needs to change its parent in the tree. The file shows two apparently identical examples. In the one above, the hole leader connections in the goal shape (top left) follow the general rule. In the one below, our rules realize the mistake in iteration 74, and the hole leader of the goal shape (bottom left) changes its attachments in iteration 75. This produces a change in the DF-values of the goal shape, which need to be recomputed. Later on, in iterations 569-end, the consequences of these elections are show: in the top right reconfiguring shape, two modules gets trapped in the wrong connected component of the boundary, while in the bottom right reconfiguring shape each module reaches its final destination.</li>
+                <li><b>agents_sq_example1.txt</b>, <b>agents_sq_example3.txt</b> and <b>agents_sq_example3.txt</b> These files contain three more examples.</li>
+                </ol>
+            </td>
+            <td style="vertical-align:top" bgcolor="#e3e3e3">
+            <b>Information about the supplied configuration examples:</b>
+            <br>
+            <br>
+            We supply a set of examples showing specific important behaviors of our rules:
+                <ol>
+                <li><b>agents_hex_activation.txt</b> Small example showing what an activation conflict is, and how we solve it. The activation conflict can be seen in iterations 15-17.</li>
+                <li><b>agents_hex_collision-deadlock-jump-and-wait.txt</b> Small example simultaneously showing how we solve a potential collision and deadlock in iterations 61-64, during the reconfiguration from the initial shape into the strip. Later on, in iterations 558-end, it can be seen how our rules keep the ordering (and still avoid deadlocks by jumping) when reconfiguring from the strip into the goal shape.</li>
+                <li><b>agents_hex_wait_to_close_hole.txt</b> This small example also shows how deadlocks, collisions and activation conflicts are solved (see iterations 50-94). Iterations 749-end also show that our rules take care of closing the holes at the right time, i.e., only when all modules lie in the appropriate connected component of the boundary of the static structure. In this example, some modules need to exit the hole before it gets closed.</li>
+                <li><b>agents_hex_hole_leader_control.txt</b> This small example shows the opposite case, in which modules need to reach the interior of a hole before it gets closed. This is, in general, trivial, since the hole leader normally is sent to its destination after all modules internal to the hole. This file shows the one specific case in which this does not happen if the leader of the hole has been disconnected following the general rule. In this case the leader needs to change its parent in the tree. The file shows two apparently identical examples. In the one above, the hole leader connections in the goal shape (top left) follow the general rule. In the one below, our rules realize the mistake in iteration 71, and the hole leader of the goal shape (bottom left) changes its attachments in iteration 72. This produces a change in the DF-values of the goal shape, which need to be recomputed. Later on, in iterations 708-end, the consequences of these elections are show: in the top right reconfiguring shape, one module gets trapped in the wrong connected component of the boundary, while in the bottom right reconfiguring shape each module reaches its final destination.</li>
+                <li><b>agents_hex_spiral-1.txt</b>,
+                    <b>agents_hex_spiral-2.txt</b>,
+                    <b>agents_hex_spiral-3.txt</b>, and
+                    <b>agents_hex_spiral-4.txt</b>.
+                    </b>These four bigger examples, each made out of 185-223 modules (plus the same number for the mirror image of the goal configuration), show all possible bottleneck topologies and geometric orientations. In all four cases, the robot reconfigures from its initial shape into a strip, and then back to the initial shape (which coincides with the goal shape).</li>
+            </td>
+            </tr>
+          </tbody>
+       </table>
+</div>
+
+<h3>Create your own examples</h3>
+      If you want to create your own examples and see how they reconfigure using our sets of rules, you need to take into account the following conditions. They are due to the fact that we need to also simulate the process of the leader getting the information of the goal shape. This is done in the simulator through what we call the <em>mirror</em> of the goal shape, i.e., a translation of the goal configuration, which gets processed and is used by the modules to "read" the goal information, hence simulating that they got it from their leader.
+       <ul>
+            <li>The initial and the mirror of the goal configurations must have the same number of modules (>1), and all connections among modules within each configuration need to be present when the process starts.
+            <li>The initial configuration must lie to the right of the mirror of the goal configuration, at a proportionally small distance, sufficient to allow the reconfiguration without collisions.
+            <li>The leaders of both configurations need to to have the same <em>x</em>-coordinate (see the documentation for details on the coordinate system in the hexagonal case).
+            <li>The state of all modules of the initial configuration must be <b>UNDEF</b>, and the state of all modules in the mirror of the goal configuration must be <b>RNDEF</b>.
+        </ul>
+
+
+<h3>Source files for the simulators</h3>
+
+Our simulators are open source. You are allowed to modify them, as long as the following requirements are fulfilled:
+<ol>
+    <li>The source code of your modified version of the simulator must be made public.</li>
+    <li>Acknowledgment to the original version and authors of the simulator must be included.</li>
+    <li>A notice must be sent by e-mail to the authors of the original simulator, explaining what your modification does and where it is available.</li>
+</ol>
+The source files of both simulators can be downloaded here:
+<ul>
+    <li>Source files for the square simulator: <a href="AgentSystem2D_SRC.zip">AgentSystem2D_SRC.zip</a></li>
+    <li>Source files for the hexagonal simulator: <a href="AgentSystemHexa_SRC.zip">AgentSystemHexa_SRC.zip</a></li>
+</ul>
+
+<h3>Related work</h3>
+
+<ul>
+<li><b>Simulating Distributed Algorithms for Lattice Agents</b>, by Oswin Aichholzer, Thomas Hackl, Vera Sacrist&aacute;n, Birgit Vogtenhuber, and Reinhard Wallner. <a href="http://dccg.upc.edu/people/vera/AgentSystems/">Link</a>.</li>
+<li><b>Fast in-place reconfiguration of expand-contract modular robots</b>, by Manuel Perera and Vera Sacrist&aacute;n.
+    <a href="http://dccg.upc.edu/people/vera/CrystalSimulation/">Link</a>.</li>
+</ul>
+
+
+<hr size="2" width="100%" noshade>
+
+<table border="0" cellpadding="2" cellspacing="2" width="100%">
+          <tbody>
+            <tr>
+                <td style="vertical-align:bottom" align="center">
+                Initial shape
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Reconfiguring forwards
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Building the strip
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Back from the strip
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Reconfiguring backwards
+                </td>
+                <td style="vertical-align:bottom" align="center">
+                Final shape
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:top" align="center">
+                <img src="reconf_hex_1.jpg" alt="initial shape" width="90%">
+                </td>
+                <td style="vertical-align:top" align="center">
+                <img src="reconf_hex_2.jpg" alt="reconfiguring forwards" width="70%">
+                </td>
+                <td style="vertical-align:top" align="center">
+                <img src="reconf_hex_3.jpg" alt="building the strip" width="90%">
+                </td>
+                <td style="vertical-align:top" align="center">
+                <img src="reconf_hex_4.jpg" alt="back from the strip" width="100%">
+                </td>
+                <td style="vertical-align:top" align="center">
+                <img src="reconf_hex_5.jpg" alt="reconfiguring backwrds" width="80%">
+                </td>
+                <td style="vertical-align:top" align="center">
+                <img src="reconf_hex_6.jpg" alt="final shape" width="90%">
+                </td>
+            </tr>
+        </table>
+
+        <hr size="2" width="100%" noshade>
+        <div align="right"><font size="-1"><i>Last update of this page:
+              <script language="Javascript">
+<!--
+var lastModifiedDate = new Date(document.lastModified);
+var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var dateString = monthArray [lastModifiedDate.getMonth()] + " " + lastModifiedDate.getDate() + ", " + lastModifiedDate.getFullYear();
+
+document.write (dateString);
+--> </script></i></font> </div>
+  </body>
+</html>

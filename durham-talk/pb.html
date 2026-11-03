@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- BEGIN header.tt -->
+  <head>
+    <title>Distributed rhombus formation of sliding squares
+    </title>
+    <link rel="icon" href="https://ris.uni-paderborn.de/images/brand_logo.png" type="image/png">
+      <!-- Google Scholar --><meta name="citation_title" content="Distributed rhombus formation of sliding squares"><meta name="citation_author" content="Kostitsyna, Irina">
+      <meta name="citation_author" content="Liedtke, David">
+      <meta name="citation_author" content="Scheideler, Christian">
+      <meta name="citation_date" content="2026"><meta name="citation_pdf_url" content="https://doi.org/10.1016/j.tcs.2026.116196"><meta name="citation_journal_title" content="Theoretical Computer Science" /><meta name="citation_volume" content="1085" /><meta name="citation_issn" content="0304-3975">
+      <!-- DC-Tags -->
+      <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+      <meta name="DC.title" content="Distributed rhombus formation of sliding squares"><meta name="DC.creator" content="Kostitsyna, Irina">
+      <meta name="DC.creator" content="Liedtke, David">
+      <meta name="DC.creator" content="Scheideler, Christian">
+      <meta name="DC.date" content="2026"><meta name="DC.language" content="eng">
+      <meta name="DC.identifier" content="https://ris.uni-paderborn.de/record/66838/66838"><meta name="DC.description" content="The sliding square model is a widely used abstraction for studying self-reconfigurable robotic systems, where modules are square-shaped robots that move by sliding or rotating over one another. In this paper, we propose a novel distributed algorithm that enables a group of modules to reconfigure into a rhombus shape, starting from an arbitrary side-connected configuration. It is connectivity-preserving and operates under minimal assumptions: one leader module, common chirality, constant memory per module, and visibility and communication restricted to immediate neighbors. Unlike prior work, which relaxes the original sliding square move-set, our approach uses the unmodified move-set, addressing the additional challenge of handling locked configurations. Our algorithm is sequential in nature and operates with a worst-case time complexity of O(n^2) rounds, which is optimal for sequential algorithms. To improve runtime, we introduce two parallel variants of the algorithm. Both rely on a spanning tree data structure, allowing modules to make decisions based on local connectivity. Our experimental results show a significant speedup for the first variant, and a linear average runtime for the second variant, which is worst-case optimal for parallel algorithms.">
+      <meta name="DC.type" content="article"><link rel="DC.relation" href="https://doi.org/10.1016/j.tcs.2026.116196"><link rel="DC.relation" href="urn:ISSN:0304-3975">
+        
+    
+    <meta name="robots" content="index,follow,noimageindex" />
+    
+    <!-- BEGIN head_meta.tt -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" type="text/css" href="https://ris.uni-paderborn.de/css/ltIE10.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="https://ris.uni-paderborn.de/css/main.css">
+    <link rel="stylesheet" href="https://ris.uni-paderborn.de/css/upb.css">
+    <script type="text/javascript">
+      window.librecat = {
+        uri_base: "https://ris.uni-paderborn.de"
+      };
+    </script>
+    <script src="https://ris.uni-paderborn.de/javascripts/jquery.min.js"></script>
+    <script src="https://ris.uni-paderborn.de/javascripts/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="https://ris.uni-paderborn.de/javascripts/bootstrap.min.js"></script><!-- main bootstrap file -->
+    <script src="https://ris.uni-paderborn.de/javascripts/bootstrap-select.min.js"></script><!-- dropdown-like selects -->
+    <script src="https://ris.uni-paderborn.de/javascripts/librecat.js"></script>
+<!-- END head_meta.tt -->
+  </head>
+
+  <body>
+  
+
+<!-- BEGIN navbar.tt -->
+<header>
+
+    <div id="upbheader" class="row">
+
+            <div id="unilogo" class="col-md-12 hidden-sm hidden-lg hidden-md headerxs">
+                <a href="https://www.uni-paderborn.de/">
+                    <img src="https://www.uni-paderborn.de/typo3conf/ext/upb/Resources/Public/Files/gfx/logo.png" alt="Universität Paderborn" id="logo">
+                </a>
+                <div class="ristitle">
+                    Research Information System (RIS)
+                </div>
+            </div>
+            <div id="unilogo" class="col-md-12 hidden-xs headerstandard">
+                <a href="https://www.uni-paderborn.de/">
+                    <img src="https://www.uni-paderborn.de/typo3conf/ext/upb/Resources/Public/Files/gfx/logo.png" alt="Universität Paderborn" id="logo">
+                </a>
+                <span class="ristitle">
+                    Research Information System (RIS)
+                </span>
+            </div>
+        </div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" title="LibreCat home" href="https://ris.uni-paderborn.de/"><img src="https://ris.uni-paderborn.de/images/brand_logo.png" alt="" /></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="https://ris.uni-paderborn.de/"><span class="fa fa-home"></span>Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- START btn_lang.tt -->
+
+
+
+
+
+
+  
+    
+  
+
+  
+
+
+
+
+  <li class="helpme helpme-md dropdown" data-placement="left" title="Change language">
+
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <span class="fa fa-language"></span>
+      English
+      <span class="fa fa-chevron-down"></span>
+    </a>
+    <ul class="dropdown-menu">
+    
+      <li>
+        <a href="https://ris.uni-paderborn.de/set_language?lang=de">Deutsch</a>
+      </li>
+    
+    </ul>
+
+  </li>
+
+
+<!-- END btn_lang.tt -->
+
+                <li><a href="https://ris.uni-paderborn.de/login"><span class="fa fa-sign-in"></span><span class="hidden-sm">Login</span></a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-1 col-sm-2 col-md-offset-1">
+                    
+                </div>
+            </div>
+        </div><!-- /container -->
+    </nav>
+    <div class="modal" id="selectAFF">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Title</h4>
+                    <div><small>Click a name to choose. Click <span class="fa fa-chevron-down"></span> to show more.</small></div>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="front">
+    <div class="container title publication">
+<!-- END navbar.tt -->
+
+
+  <div class="row">
+    <div class="col-xs-12" id="messages">
+    </div>
+  </div>
+
+<!-- END header.tt -->
+
+<!-- BEGIN publication/record.tt -->
+<script type="text/javascript">function ReduceAuthors (){
+  document.getElementById('showAut').innerHTML= '<br><a href="#details" onclick="ShowAuthors();"><span class="fa fa-plus fw"></span>All</a>' ;
+}
+
+function ShowAuthors (){
+  var str = "" ;
+  
+    
+  
+    
+  
+    
+  
+  str += "<br><a href='#details' onclick='ReduceAuthors();return false;'><span class='fa fa-minus fw'></span>Less</a>" ;
+  document.getElementById('showAut').innerHTML= str ;
+}
+
+function ReduceGenBankIDs (){
+  document.getElementById('showGen').innerHTML= '<br><a href="#supplements" onclick="ShowGenBankIDs();"><span class="fa fa-plus fw"></span>All</a>' ;
+}
+
+function ShowGenBankIDs (){
+  var str = "" ;
+  
+  str += '<br><a href="#" onclick="ReduceGenBankIDs();"><span class="fa fa-minus fw"></span>Less</a>' ;
+  document.getElementById('showGen').innerHTML= str ;
+}
+
+function ReduceFiles (){
+  document.getElementById('showFiles').innerHTML= '<br><a href="#" onclick="ShowFiles();"><span class="fa fa-plus fw"></span>All</a>' ;
+}
+
+function ShowFiles (){
+  var str = "" ;
+  
+  
+  str += '<br><a href="#" onclick="ReduceFiles();"><span class="fa fa-minus fw"></span>Less</a>' ;
+  document.getElementById('showFiles').innerHTML= str ;
+}
+
+function ReduceAuthorFacet () {
+  $('#showAuthorFacet').hide();
+  $('#showAuthorFacetLink').show();
+}
+
+function ShowAuthorFacet (){
+  $('#showAuthorFacet').show();
+  $('#showAuthorFacetLink').hide();
+}
+
+function ReduceEditorFacet () {
+  $('#showEditorFacet').hide();
+  $('#showEditorFacetLink').show();
+}
+
+function ShowEditorFacet (){
+  $('#showEditorFacet').show();
+  $('#showEditorFacetLink').hide();
+}
+</script>
+
+
+
+<div class="row"><!-- outer row-->
+  <div class="col-md-11 col-sm-12"><!-- outer col -->
+    <div class="page-header" id="banner">
+    </div>
+    
+    <div class="row margin-bottom1">
+      <div class="col-xs-10 col-sm-8"><!-- begin left col -->
+        <h1 class="cmark">Distributed rhombus formation of sliding squares</h1>
+        <div class="row">
+          <div class="col-md-12">
+          <p>I. Kostitsyna, D. Liedtke, C. Scheideler, Theoretical Computer Science 1085 (2026).</p>
+          </div>
+        </div>
+        <!-- fulltext -->
+        
+
+        
+        <!-- no fulltext -->
+        <div class="row">
+          <div class="col-xs-3 text-muted">Download</div>
+          <div class="col-xs-9">No fulltext has been uploaded.</div>
+        </div>
+        
+
+        
+
+        <div class="row">
+          <div class="col-xs-3 text-muted">DOI</div>
+          <div class="col-xs-9"><a href="https://doi.org/10.1016/j.tcs.2026.116196" title="10.1016/j.tcs.2026.116196">10.1016/j.tcs.2026.116196</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Pubtyp, -status und -quali -->
+            
+            <em>Journal Article</em>
+            
+
+            
+            | <em>Published</em>
+            
+
+            
+              |              <em>English</em>
+              
+            
+          </div>
+        </div>
+
+      </div><!-- end left col -->
+
+      
+    </div><!-- row -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+          
+
+          
+
+          
+
+          
+
+          <li class="hidden-md hidden-lg hidden-sm"><a href="#citethis">Cite This</a></li>
+
+          <li class="hidden-md hidden-lg hidden-sm"><a href="#export">Export / Search</a></li>
+
+            <li class="navbar-right"><a class="mark btn btn-xs" data-marked="0" data-id="66838"><span class="fa fa-square-o fa-lg"></span> Mark/Unmark publication</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8"><!-- tab-content -->
+        <div class="tab tab-content">
+<!-- BEGIN publication/tab_details.tt -->
+
+<div class="tab-pane active" id="details">
+
+
+      <div class="row">        <div class="col-lg-2 col-md-3 text-muted">Author</div>
+        <div class="col-lg-10 col-md-9">
+      Kostitsyna, Irina;
+      <a href="https://ris.uni-paderborn.de/person/55557">Liedtke, David<sup class="text-muted">LibreCat</sup></a>;
+      <a href="https://ris.uni-paderborn.de/person/20792">Scheideler, Christian<sup class="text-muted">LibreCat</sup></a></div></div>
+
+  <div class="row">
+    <div class="col-lg-2 col-md-3 text-muted">Department</div>
+    <div class="col-lg-10 col-md-9">
+  <a href="https://ris.uni-paderborn.de/record?cql=department=34" class="long">Fakultät für Elektrotechnik, Informatik und Mathematik</a><br />
+  <a href="https://ris.uni-paderborn.de/record?cql=department=7" class="long">Institut für Informatik</a><br />
+  <a href="https://ris.uni-paderborn.de/record?cql=department=79" class="long">Theorie verteilter Systeme</a></div></div>
+
+  <div class="row">
+    <div class="col-lg-2 col-md-3 text-muted">Abstract</div>
+    <div class="col-lg-10 col-md-9 cmark abstract">The sliding square model is a widely used abstraction for studying self-reconfigurable robotic systems, where modules are square-shaped robots that move by sliding or rotating over one another. In this paper, we propose a novel distributed algorithm that enables a group of modules to reconfigure into a rhombus shape, starting from an arbitrary side-connected configuration. It is connectivity-preserving and operates under minimal assumptions: one leader module, common chirality, constant memory per module, and visibility and communication restricted to immediate neighbors. Unlike prior work, which relaxes the original sliding square move-set, our approach uses the unmodified move-set, addressing the additional challenge of handling locked configurations. Our algorithm is sequential in nature and operates with a worst-case time complexity of O(n^2) rounds, which is optimal for sequential algorithms. To improve runtime, we introduce two parallel variants of the algorithm. Both rely on a spanning tree data structure, allowing modules to make decisions based on local connectivity. Our experimental results show a significant speedup for the first variant, and a linear average runtime for the second variant, which is worst-case optimal for parallel algorithms.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2 col-md-3 text-muted">Keywords</div>
+    <div class="col-lg-10 col-md-9">
+        <a href='https://ris.uni-paderborn.de/record?cql=keyword="modular robots"'>modular robots</a>; 
+        <a href='https://ris.uni-paderborn.de/record?cql=keyword="distributed algorithms"'>distributed algorithms</a>; 
+        <a href='https://ris.uni-paderborn.de/record?cql=keyword="sliding squares"'>sliding squares</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2 col-md-3 text-muted">Publishing Year</div>
+    <div class="col-lg-10 col-md-9"><a href="https://ris.uni-paderborn.de/record?cql=year=2026">2026</a></div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2 col-md-3 text-muted">Journal Title</div>
+    <div class="col-lg-10 col-md-9"><span>Theoretical Computer Science</span></div>
+  </div>
+
+
+    <div class="row">
+      <div class="col-lg-2 col-md-3 text-muted">Volume</div>
+      <div class="col-lg-10 col-md-9"><span>1085</span></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-3 text-muted">Article Number</div>
+      <div class="col-lg-10 col-md-9"><span>116196</span></div>
+    </div>
+
+  <div class="row">
+    <div class="col-lg-2 col-md-3 text-muted">ISSN</div>
+    <div class="col-lg-10 col-md-9"><a href="https://ris.uni-paderborn.de/record?cql=issn=0304-3975">0304-3975</a></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2 col-md-3 text-muted">LibreCat-ID</div>
+    <div class="col-lg-10 col-md-9">
+    <a href="https://ris.uni-paderborn.de/record/66838" title="Link to this page, e.g. for bookmarking">66838</a>
+    </div>
+  </div><!-- BEGIN publication/citation_box.tt -->
+<div id="citethis" class="anchor">
+  <h3 id="cite">Cite this</h3>
+  <ul class="nav nav-tabs">
+        <li class="active"><a href="#ama" data-toggle="tab">AMA</a></li>
+        <li ><a href="#apa" data-toggle="tab">APA</a></li>
+        <li ><a href="#bibtex" data-toggle="tab">BibTeX</a></li>
+        <li ><a href="#chicago" data-toggle="tab">Chicago</a></li>
+        <li ><a href="#ieee" data-toggle="tab">IEEE</a></li>
+        <li ><a href="#mla" data-toggle="tab">MLA</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="ama" class="tab-pane active cmark">Kostitsyna I, Liedtke D, Scheideler C. Distributed rhombus formation of sliding squares. <i>Theoretical Computer Science</i>. 2026;1085. doi:<a href="https://doi.org/10.1016/j.tcs.2026.116196">10.1016/j.tcs.2026.116196</a></div>
+    <div id="apa" class="tab-pane cmark">Kostitsyna, I., Liedtke, D., &#38; Scheideler, C. (2026). Distributed rhombus formation of sliding squares. <i>Theoretical Computer Science</i>, <i>1085</i>, Article 116196. <a href="https://doi.org/10.1016/j.tcs.2026.116196">https://doi.org/10.1016/j.tcs.2026.116196</a></div>
+    <div id="bibtex" class="tab-pane cmark">@article{Kostitsyna_Liedtke_Scheideler_2026, title={Distributed rhombus formation of sliding squares}, volume={1085}, DOI={<a href="https://doi.org/10.1016/j.tcs.2026.116196">10.1016/j.tcs.2026.116196</a>}, number={116196}, journal={Theoretical Computer Science}, publisher={Elsevier BV}, author={Kostitsyna, Irina and Liedtke, David and Scheideler, Christian}, year={2026} }</div>
+    <div id="chicago" class="tab-pane cmark">Kostitsyna, Irina, David Liedtke, and Christian Scheideler. “Distributed Rhombus Formation of Sliding Squares.” <i>Theoretical Computer Science</i> 1085 (2026). <a href="https://doi.org/10.1016/j.tcs.2026.116196">https://doi.org/10.1016/j.tcs.2026.116196</a>.</div>
+    <div id="ieee" class="tab-pane cmark">I. Kostitsyna, D. Liedtke, and C. Scheideler, “Distributed rhombus formation of sliding squares,” <i>Theoretical Computer Science</i>, vol. 1085, Art. no. 116196, 2026, doi: <a href="https://doi.org/10.1016/j.tcs.2026.116196">10.1016/j.tcs.2026.116196</a>.</div>
+    <div id="mla" class="tab-pane cmark">Kostitsyna, Irina, et al. “Distributed Rhombus Formation of Sliding Squares.” <i>Theoretical Computer Science</i>, vol. 1085, 116196, Elsevier BV, 2026, doi:<a href="https://doi.org/10.1016/j.tcs.2026.116196">10.1016/j.tcs.2026.116196</a>.</div>
+  </div>
+</div>
+<!-- END publication/citation_box.tt -->
+</div>
+
+<!-- END publication/tab_details.tt -->
+
+          
+        </div><!-- tab-content -->
+      </div>
+
+      <div class="col-md-3 col-md-offset-1">
+
+        <div class="hidden-sm hidden-md hidden-lg"><hr></div>
+
+        <!-- Edit -->
+        
+
+        <!-- Export -->
+        <h3 id="export">Export</h3>
+        <a class="label label-default total-marked" href="https://ris.uni-paderborn.de/marked"></a> <a href="https://ris.uni-paderborn.de/marked" rel="nofollow">Marked Publications</a>
+
+        <!-- trigger modal -->
+        <p><a href="#contentnegotiation" data-toggle="modal"><span class="fa fa-share-square-o fw1"></span>Open Data LibreCat</a></p>
+
+        <!-- modal -->
+        <div id="contentnegotiation" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel">Open Data LibreCat</h3>
+            </div>
+            <div class="modal-body">
+                  <div class="row">
+                    <div class="col-xs-4">
+                    BibTeX:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.bibtex"> text/x-bibtex</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    YAML:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.yaml"> text/x-yaml</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    DC JSON:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.dc_json"> application/oaidc+json</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    RTF:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.rtf"> application/rtf</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    JSONLines:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.jsonl"> text/plain</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    MODS:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.mods"> application/xml</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    Dublin Core:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.rdf"> application/xml</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    JSON:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.json"> application/json</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    Dublin Core:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.dc"> application/xml</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    RIS (reference software):
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.ris"> application/x-research-info-systems</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    aREF (another RDF Encoding Form):
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.aref"> text/x-yaml</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    CSL JSON:
+                    </div>
+                    <div class="col-xs-8">
+                      <a href="https://ris.uni-paderborn.de/record/66838.csl_json"> application/vnd.citationstyles.csl+json</a>
+                    </div>
+                  </div>
+                  <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+            </div>
+          </div>
+          </div>
+        </div><!-- end modal -->
+
+    <!-- Sources -->
+
+
+        <!-- Supplements -->
+        
+
+        <!-- Search title in -->
+        <h3>Search this title in</h3>
+        <p>
+          <a href="https://scholar.google.com/scholar?q=allintitle%3ADistributed%20rhombus%20formation%20of%20sliding%20squares"><img src="https://ris.uni-paderborn.de/images/icon_gs.png" alt="" class="img-thumbnail">Google Scholar</a><br>
+        </p>
+      </div>
+    </div><!-- row tabs and right info menu -->
+
+    <!-- _id -->
+
+  </div><!-- outer col -->
+
+</div><!-- outer row-->
+
+<script type="application/ld+json">
+{"name":"Distributed rhombus formation of sliding squares","url":"https://ris.uni-paderborn.de/record/66838","description":"The sliding square model is a widely used abstraction for studying self-reconfigurable robotic systems, where modules are square-shaped robots that move by sliding or rotating over one another. In this paper, we propose a novel distributed algorithm that enables a group of modules to reconfigure into a rhombus shape, starting from an arbitrary side-connected configuration. It is connectivity-preserving and operates under minimal assumptions: one leader module, common chirality, constant memory per module, and visibility and communication restricted to immediate neighbors. Unlike prior work, which relaxes the original sliding square move-set, our approach uses the unmodified move-set, addressing the additional challenge of handling locked configurations. Our algorithm is sequential in nature and operates with a worst-case time complexity of O(n^2) rounds, which is optimal for sequential algorithms. To improve runtime, we introduce two parallel variants of the algorithm. Both rely on a spanning tree data structure, allowing modules to make decisions based on local connectivity. Our experimental results show a significant speedup for the first variant, and a linear average runtime for the second variant, which is worst-case optimal for parallel algorithms.","@context":"http://schema.org/","dateCreated":"2026-08-25T05:30:39Z","author":["Kostitsyna, Irina","Liedtke, David","Scheideler, Christian"],"@type":"ScholarlyArticle","dateModified":"2026-08-25T05:37:47Z","copyrightYear":"2026"}</script>
+
+<!-- END publication/record.tt -->
+
+<!-- BEGIN footer.tt -->
+
+</div><!-- container -->
+
+<div id="push"></div><!-- for sticky footer -->
+
+</main>
+
+<footer class="panel-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-md-4 col-sm-5">
+          
+          <p>Powered by <a href='http://www.librecat.org/'>LibreCat</a></p>
+
+
+          
+          <p><a href='/docs/datenschutzerklaerung'>Privacy Policy</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+        <div class="col-sm-12">
+            <div class="col-xs footer-image"></div>
+        </div>
+  </div>
+</footer>
+</body>
+
+<!-- END footer.tt -->
+
+</html>
+
