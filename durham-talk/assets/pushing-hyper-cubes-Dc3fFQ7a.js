@@ -1,0 +1,1 @@
+var e=`/durham-talk/ModularRobots/pushing-hyper-cubes.png`;export{e as t};

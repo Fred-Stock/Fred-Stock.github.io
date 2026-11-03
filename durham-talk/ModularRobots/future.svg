@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="59.141891mm"
+   height="32.933811mm"
+   viewBox="0 0 59.141891 32.933811"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-73.237901,-95.054546)">
+    <g
+       transform="matrix(0.264583,0,0,0.264583,90.474341,111.52145)"
+       id="g3">
+      <path
+         style="fill:#c8c8c8;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-opacity:1"
+         d="m 32.4469,-35.3553 h -96.5926 l 6.6988,96.5925 h 96.5926 z"
+         id="path1" />
+      <path
+         style="fill:#c8c8c8;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-opacity:1"
+         d="m 32.4469,-35.3553 6.6988,96.5925 25,-25.8819 -6.6988,-96.5925 z"
+         id="path2" />
+      <path
+         style="fill:#c8c8c8;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-opacity:1"
+         d="m 32.4469,-35.3553 25,-25.8819 h -96.5926 l -25,25.8819 z"
+         id="path3" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:25.4px;font-family:'Noto Sans Oriya';-inkscape-font-specification:'Noto Sans Oriya';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#808080;stroke:#ffffff;stroke-width:0.575"
+       x="120.81469"
+       y="117.42018"
+       id="text4"><tspan
+         id="tspan4"
+         style="font-size:25.4px;stroke-width:0.575"
+         x="120.81469"
+         y="117.42018">?</tspan></text>
+  </g>
+</svg>

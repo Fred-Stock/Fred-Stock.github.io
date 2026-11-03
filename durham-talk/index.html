@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modular Robots and Distributed Algorithms - Slidev</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600&family=Fira+Code:wght@200;400;600&display=swap" type="text/css">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/free-space.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/backbone-full.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/model-amoebot.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/model-crystalline.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/model-pivoting.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/model-sliding.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/model-armadas.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/h-to-i-reconfiguration.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/h-to-square-reconfiguration.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/h-to-staircase-reconfiguration.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/h-to-u-reconfiguration.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/pivoting-hexagons-rigid.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/pivoting-3d-super-rigid.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/parallel-sliding-squares.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/gen-reconf.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/in-place.svg">
+<link rel="preload" as="image" href="/durham-talk/general/rus-2003-alg-title.png">
+<link rel="preload" as="image" href="/durham-talk/general/rus-wrong-lem.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/rus1.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/rus-2.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/rus-3.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/rus-4.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/rus-5.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/rus-6.svg">
+<link rel="preload" as="image" href="/durham-talk/general/rus-wrong-lem-2.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/pushing-hyper-cubes.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/pushing-hyper-cubes-annotated.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/new-arxiv-post.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/na-lemma-socg.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/nna1.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/nna2.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/nna3.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf1.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-1.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-2.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-3.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-4.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-5.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-6.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-7.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-green.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-greenonly.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-0.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row0.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row1.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row2.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row3.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row4.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row5x.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row5.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row6.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-row7.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-ov-x.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/landf3-ov-m.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/lemma2-case2-6.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/lemma2-case2-7.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/inplace-1.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/inplace-2.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/inplace-3.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/clumps.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/Compact.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/scaffolding.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/Melding.svg">
+<link rel="preload" as="image" href="/durham-talk/general/esa-paper-title.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/collision-types.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/planar-monotone-3sat.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/np-hardness-construction.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/scaled-strips.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/scaled-to-square.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/hist-init.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/hist-final.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/histogram.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/histogram-bisectors.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/histogram-reconfig.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/histogram-final.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/overview-0.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/overview-1.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/overview-2.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/overview-3.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/overview-4.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/overview-5.svg">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/overview-6.svg">
+<link rel="preload" as="image" href="/durham-talk/general/model-fast-left.png">
+<link rel="preload" as="image" href="/durham-talk/general/model-fast-right.png">
+<link rel="preload" as="image" href="/durham-talk/general/dist-fast.png">
+<link rel="preload" as="image" href="/durham-talk/general/model-hurtado-top.png">
+<link rel="preload" as="image" href="/durham-talk/general/model-hurtado-bottom.png">
+<link rel="preload" as="image" href="/durham-talk/general/dist-hurtado.png">
+<link rel="preload" as="image" href="/durham-talk/general/model-rhombus.png">
+<link rel="preload" as="image" href="/durham-talk/general/dist-rhombus.png">
+<link rel="preload" as="image" href="/durham-talk/general/fig-rhombus-2ab.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/dutch-team.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/compaction-moves/local-a-d.png">
+<link rel="preload" as="image" href="/durham-talk/ModularRobots/compaction-moves/pillar-shoves-e.png">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta property="slidev:version" content="52.20.1">
+<meta property="og:title" content="Modular Robots and Distributed Algorithms - Slidev">  <script type="module" crossorigin src="/durham-talk/assets/index-DF9WwyvY.js"></script>
+  <link rel="modulepreload" crossorigin href="/durham-talk/assets/rolldown-runtime-XKyaHtl9.js">
+  <link rel="modulepreload" crossorigin href="/durham-talk/assets/modules/shiki-8iFhvGOB.js">
+  <link rel="modulepreload" crossorigin href="/durham-talk/assets/useClicks-ooiKGuI5.js">
+  <link rel="modulepreload" crossorigin href="/durham-talk/assets/modules/vue-1Ue5kEk9.js">
+  <link rel="stylesheet" crossorigin href="/durham-talk/assets/modules/shiki-V4-KMA-J.css">
+  <link rel="stylesheet" crossorigin href="/durham-talk/assets/index-BpdOURPw.css">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="mermaid-rendering-container"></div>
+  
+</body>
+</html>

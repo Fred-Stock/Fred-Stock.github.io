@@ -1,0 +1,1 @@
+var e=`/durham-talk/ModularRobots/clumps.svg`,t=`/durham-talk/ModularRobots/Compact.svg`;export{e as n,t};

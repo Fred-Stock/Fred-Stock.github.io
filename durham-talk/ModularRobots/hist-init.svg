@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="76.533333" height="76.533333" viewBox="0 0 76.533333 76.533333">
+<g transform="translate(-193.6,0)"><g transform="matrix(1.3333333,0,0,-1.3333333,119.46667,789.86667)">
+<rect x="56" y="536" width="56" height="56" fill="none" stroke="#fca10f" stroke-width="0.8"/>
+<g class="" opacity=".33"><path d="M64,544 L72,544 L73,543 L73,535 L65,535 L64,536Z M72,544 L80,544 L81,543 L81,535 L73,535 L72,536Z M80,552 L88,552 L89,551 L89,543 L81,543 L80,544Z M72,576 L80,576 L81,575 L81,567 L73,567 L72,568Z M80,576 L88,576 L89,575 L89,559 L81,559 L80,560Z M56,576 L64,576 L65,575 L65,567 L57,567 L56,568Z M88,552 L96,552 L97,551 L97,543 L89,543 L88,544Z M104,560 L112,560 L113,559 L113,551 L105,551 L104,552Z M80,592 L88,592 L89,591 L89,583 L81,583 L80,584Z M56,560 L64,560 L65,559 L65,535 L57,535 L56,536Z M64,576 L72,576 L73,575 L73,551 L65,551 L64,552Z M88,592 L96,592 L97,591 L97,567 L89,567 L88,568Z M96,576 L104,576 L105,575 L105,543 L97,543 L96,544Z" fill="#000"/></g>
+<rect x="64" y="536" width="8" height="8" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="72" y="536" width="8" height="8" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="80" y="544" width="8" height="8" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="72" y="568" width="8" height="8" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="80" y="560" width="8" height="16" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="56" y="568" width="8" height="8" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="88" y="544" width="8" height="8" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="104" y="552" width="8" height="8" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="80" y="584" width="8" height="8" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="56" y="536" width="8" height="24" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="64" y="552" width="8" height="24" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="88" y="568" width="8" height="24" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="96" y="544" width="8" height="32" fill="#bfbfbf" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/>
+<path class="" d="M80,568h8 M56,544h8 M56,552h8 M64,560h8 M64,568h8 M88,576h8 M88,584h8 M96,552h8 M96,560h8 M96,568h8" fill="none" stroke="#000" stroke-opacity="0.1" stroke-width="0.8"/>
+</g></g></svg>

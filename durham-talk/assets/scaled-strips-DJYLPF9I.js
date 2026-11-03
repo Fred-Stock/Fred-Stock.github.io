@@ -1,0 +1,1 @@
+var e=`/durham-talk/ModularRobots/scaled-strips.svg`;export{e as t};

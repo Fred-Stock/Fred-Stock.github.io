@@ -1,0 +1,1 @@
+var e=`/durham-talk/ModularRobots/rus1.svg`,t=`/durham-talk/ModularRobots/rus-2.svg`,n=`/durham-talk/ModularRobots/rus-3.svg`,r=`/durham-talk/ModularRobots/rus-4.svg`,i=`/durham-talk/ModularRobots/rus-5.svg`,a=`/durham-talk/ModularRobots/rus-6.svg`;export{t as a,n as i,i as n,e as o,r,a as t};

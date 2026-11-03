@@ -1,0 +1,1 @@
+var e=`/durham-talk/general/rus-wrong-lem.png`;export{e as t};
